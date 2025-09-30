@@ -1,42 +1,122 @@
+/* Spiritual Guide Theme */
 #root {
-  max-width: 1280px;
+  max-width: 920px;
   margin: 0 auto;
-  padding: 2rem;
+  padding: 2rem 1rem;
+}
+
+.page {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.hero {
   text-align: center;
 }
-
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
+.hero h1 {
+  margin: 0 0 8px 0;
+  font-weight: 700;
 }
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.react:hover {
-  filter: drop-shadow(0 0 2em #61dafbaa);
+.hero .subtitle {
+  margin: 0;
+  color: rgba(255,255,255,0.8);
 }
 
-@keyframes logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 16px;
 }
-
-@media (prefers-reduced-motion: no-preference) {
-  a:nth-of-type(2) .logo {
-    animation: logo-spin infinite 20s linear;
+@media (min-width: 720px) {
+  .grid {
+    grid-template-columns: 1fr 1fr 1fr;
   }
 }
 
 .card {
-  padding: 2em;
+  background: linear-gradient(180deg, rgba(255,255,255,0.08), rgba(255,255,255,0.04));
+  border: 1px solid rgba(255,255,255,0.08);
+  border-radius: 16px;
+  padding: 16px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.25);
+}
+.card h2 {
+  margin: 0 0 8px 0;
 }
 
-.read-the-docs {
-  color: #888;
+.affirmation .quote {
+  min-height: 60px;
+  margin: 8px 0 12px 0;
+  font-size: 1.1rem;
+}
+
+.breath .breath-visual {
+  display: flex;
+  justify-content: center;
+  margin: 6px 0 10px 0;
+}
+.breath .circle {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  background: radial-gradient(circle at 30% 30%, #9be3ff, #6e8efb);
+  filter: drop-shadow(0 8px 16px rgba(110,142,251,0.35));
+}
+.breath .circle.pulse {
+  animation: pulse 1s ease-in-out infinite alternate;
+}
+@keyframes pulse {
+  from { transform: scale(0.92); }
+  to { transform: scale(1.06); }
+}
+.breath .phase {
+  text-align: center;
+  font-weight: 600;
+}
+.breath .seconds {
+  text-align: center;
+  font-variant-numeric: tabular-nums;
+  font-size: 1.4rem;
+  margin-bottom: 8px;
+}
+.controls {
+  display: flex;
+  gap: 8px;
+  justify-content: center;
+}
+
+.intention .hint {
+  margin: 0 0 8px 0;
+  color: rgba(255,255,255,0.75);
+}
+.input {
+  width: 100%;
+  resize: vertical;
+  background: rgba(0,0,0,0.2);
+  color: inherit;
+  border: 1px solid rgba(255,255,255,0.14);
+  border-radius: 10px;
+  padding: 10px 12px;
+}
+.intention-preview {
+  margin-top: 10px;
+  min-height: 24px;
+  color: rgba(255,255,255,0.9);
+}
+
+.btn {
+  background: #6e8efb;
+  color: #fff;
+  border: none;
+  padding: 10px 14px;
+  border-radius: 999px;
+}
+.btn.secondary {
+  background: #8e9aaf;
+}
+
+.footer {
+  text-align: center;
+  color: rgba(255,255,255,0.7);
 }
